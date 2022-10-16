@@ -3,7 +3,8 @@ import SearchBar from "../Components/SearchBar/SearchBar";
 let accessToken;
 
 const clientID = '9d9e01553427449c8215177c77c29d57';
-const redirectURL = 'http://localhost:3000/';
+// const redirectURL = 'http://localhost:3000/';
+const redirectURL ='https://ghintema.github.io/Codecademy_Jammming-react-app/';
 
 
 const Spotify = {
@@ -49,7 +50,7 @@ const Spotify = {
                         artist: track.artists[0].name,
                         album: track.album.name,
                         uri: track.uri
-                    }));
+        35            }));
                 })
    },
    
@@ -81,7 +82,7 @@ const Spotify = {
                             method: 'POST',
                             body: JSON.stringify({ uris: trackURIs})
                         }) 
-                    })
+                    })// Here could come another .then() to deal with the response of storing-request, like an alert-message. //.then(response => response.json()).then(jsonResponse => {if (jsonResponse.status === ok) {alert('successfully stored playlist'')}})
             })
    }
 }
