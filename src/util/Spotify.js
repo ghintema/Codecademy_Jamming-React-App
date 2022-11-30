@@ -2,10 +2,9 @@ import SearchBar from "../Components/SearchBar/SearchBar";
 
 let accessToken;
 
-const clientID = '9d9e01553427449c8215177c77c29d57';
-// const redirectURL = 'http://localhost:3000/';
-const redirectURL ='https://ghintema.github.io/Codecademy_Jammming-react-app/';
 
+const clientID = process.env.REACT_APP_clientId;
+const redirectURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_redirectUlrDev : process.env.REACT_APP_redirectUrlDeploy;
 
 const Spotify = {
 
@@ -50,7 +49,7 @@ const Spotify = {
                         artist: track.artists[0].name,
                         album: track.album.name,
                         uri: track.uri
-        35            }));
+                    }));
                 })
    },
    
